@@ -1,0 +1,95 @@
+.ticker-container {
+    width: 100%;
+    background-color: var(--brand-dark-green);
+    padding: 0.8rem 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ticker-wrap {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.ticker-static-mic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--brand-dark-green);
+    padding-right: 1.5rem;
+    z-index: 10;
+    color: #ffd54f;
+    font-size: 1.1rem;
+}
+
+.ticker-track {
+    display: flex;
+    white-space: nowrap;
+    padding-left: 3rem;
+    animation: skinTickerLoop 30s linear infinite;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 60px, black calc(100% - 30px), transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 60px, black calc(100% - 30px), transparent 100%);
+}
+
+.ticker-track:hover {
+    animation-play-state: paused;
+}
+
+.ticker-item {
+    display: inline-flex;
+    align-items: center;
+    padding-right: 5rem;
+    color: #fcefe1;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.ticker-item i {
+    margin-right: 0.6rem;
+    color: #ffd54f;
+    font-size: 0.9rem;
+}
+
+@keyframes skinTickerLoop {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ticker-track {
+        animation: none;
+        white-space: normal;
+        padding-left: 0;
+        flex-wrap: wrap;
+        mask: none;
+    }
+
+    .ticker-static-mic {
+        position: static;
+        padding-right: 0.8rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .ticker-item {
+        padding-right: 1.5rem;
+        margin-bottom: 0.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .ticker-wrap {
+        border-radius: 10px;
+    }
+}

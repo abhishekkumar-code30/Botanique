@@ -1,0 +1,39 @@
+:root {
+    --navbg: #fcefe1;
+    --bg: #fffdd0;
+    --txtcolor: #36454F;
+    --txtcolorafterhover: #1e2c35;
+    --accent: #de592e;
+    --accent-hover: #c94c24;
+    --overlay-dark: rgba(22, 33, 26, 0.45);
+    --brand-dark-green: #1c352d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--txtcolor);
+    background: #fff;
+    overflow-x: hidden;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        padding: 0 4%;
+    }
+}
